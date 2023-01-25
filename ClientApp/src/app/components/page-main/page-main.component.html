@@ -1,0 +1,4 @@
+<app-search-box [suggestions]="suggestions$ | async" [term]="(pagination$ | async)?.query || ''" />
+<app-paginator [pagination]="pagination$ | async" />
+<app-book-list [books]="books$ | async" />
+<app-paginator [pagination]="pagination$ | async" />

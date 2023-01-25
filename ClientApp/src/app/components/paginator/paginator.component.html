@@ -1,0 +1,22 @@
+<div *ngIf="pagination" class="paginator">
+  <button
+    class="btn btn-outline-primary btn-sm"
+    (click)="prevPage()"
+    [disabled]="pagination!.page <= 1"
+  >
+    <i class="bi bi-arrow-left-circle"></i> Prev
+  </button>
+  <span
+    >page {{ pagination!.page }} of {{ pagination!.totalPages }} ({{
+      pagination!.totalItems
+    }}
+    items)</span
+  >
+  <button
+    class="btn btn-outline-primary btn-sm"
+    (click)="nextPage()"
+    [disabled]="pagination!.totalPages <= pagination!.page"
+  >
+    Next <i class="bi bi-arrow-right-circle"></i>
+  </button>
+</div>

@@ -1,0 +1,29 @@
+<div class="search-box">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="search"
+    [(ngModel)]="term"
+    (keyup)="suggest($event)"
+  />
+  <div *ngIf="suggestions && suggestions.length > 0" class="suggestion-list">
+    <div *ngFor="let suggestion of suggestions" class="suggestion-item">
+      <p class="title">
+        <a href="javascript:void(0)" (click)="setQuery(suggestion.title)">{{
+          suggestion.title
+        }}</a>
+      </p>
+      <p *ngIf="suggestion.subtitle" class="subtitle">
+        {{ suggestion.subtitle }}
+      </p>
+      <p class="authors">
+        <span *ngFor="let author of suggestion.authors"
+          ><a href="javascript:void(0)" (click)="setAuthor(author)"
+            >[ {{ author }} ]</a
+          >
+          &nbsp;</span
+        >
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="book" *ngIf="book">
+  <div class="row">
+    <div class="col-xxl-2 col-lg-2 col-md-3">
+      <img src="{{ book!.thumbnail }}" class="img-fluid" />
+    </div>
+    <div class="col-xxl-10 col-lg-10 col-md-9">
+      <h4>{{ book!.title }}</h4>
+      <p>{{ book!.subtitle }}</p>
+      <app-stars [value]="book.averageRating" [count]="book.ratingsCount" />
+
+      <hr />
+
+      <div class="authors">
+        <strong>Authors: </strong>
+        <span>{{ book.authors.join(" | ") }}</span>
+      </div>
+      <div class="categories">
+        <strong>Categories: </strong>
+        <span>{{ book.categories.join(" | ") }}</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xxl-8 col-lg-10 mt-4">
+      <strong>Description</strong>
+      <p>{{ book!.description }}</p>
+    </div>
+  </div>
+</div>

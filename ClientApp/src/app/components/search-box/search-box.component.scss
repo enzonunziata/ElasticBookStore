@@ -1,0 +1,47 @@
+.search-box {
+  margin: 2rem 0rem;
+}
+
+div.suggestion-item {
+  margin-bottom: 0.7rem;
+}
+
+p.title {
+  margin: 0;
+}
+
+p.title a {
+  color: rgb(235, 225, 178);
+}
+
+a {
+  color: rgb(233, 235, 240);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+p.subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(233, 235, 240, 0.8);
+}
+
+p.authors {
+  margin: 0;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.suggestion-list {
+  position: absolute;
+  z-index: 100;
+  max-width: 1000px;
+  overflow: hidden;
+  background-color: rgba(26, 40, 61, 0.9);
+  color: rgb(233, 235, 240);
+  padding: 0.5rem;
+}

@@ -1,0 +1,16 @@
+<div class="category-list">
+  <h5>Categories</h5>
+  <div *ngIf="(categories$ | async)!.selected">
+    <p>
+      <strong>{{ (categories$ | async)!.selected }}</strong>
+    </p>
+    <p><a href="javascript:void(0)" (click)="setCategory('')">remove</a></p>
+  </div>
+  <div *ngIf="!(categories$ | async)!.selected">
+    <p *ngFor="let category of (categories$ | async)!.categories">
+      <a href="javascript:void(0)" (click)="setCategory(category.key)"
+        >{{ category.key }} ({{ category.docCount }})</a
+      >
+    </p>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="author-list">
+  <h5>Authors</h5>
+  <div *ngIf="(authors$ | async)!.selected">
+    <p>
+      <strong>{{ (authors$ | async)!.selected }}</strong>
+    </p>
+    <p><a href="javascript:void(0)" (click)="setAuthor('')">remove</a></p>
+  </div>
+  <div *ngIf="!(authors$ | async)!.selected">
+    <p *ngFor="let author of (authors$ | async)!.authors">
+      <a href="javascript:void(0)" (click)="setAuthor(author.key)"
+        >{{ author.key }} ({{ author.docCount }})</a
+      >
+    </p>
+  </div>
+</div>
